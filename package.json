@@ -1,0 +1,11 @@
+{
+  "name": "modelair",
+  "version": "1.0.0",
+  "description": "mongoose schemas front-end utilites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "modelair",
+  "license": "ISC"
+}
