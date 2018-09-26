@@ -348,7 +348,6 @@ const ___validateModel = (schema, model, showErrors) => {
 }
 
 const validate = (schema, value) => {
-  // console.log('modelair validate', schema, value)
   let error = false
   let message = ''
   let type = typeof schema
