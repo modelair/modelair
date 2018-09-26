@@ -1,11 +1,16 @@
 {
+  "author": "modelair",
   "name": "modelair",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "mongoose schemas front-end utilites",
   "main": "index.js",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/modelair/modelair"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "modelair",
   "license": "MIT"
 }
