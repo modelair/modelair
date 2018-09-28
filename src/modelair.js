@@ -1,5 +1,3 @@
-const fields = require('./fields')
-const patterns = require('./patterns')
 const ObjectID = 'mongoose-id'
 const __Buffer = 'mongoose-buffer'
 const defaultFields = [
@@ -403,30 +401,15 @@ const validate = (schema, value) => {
   return {error, message}
 }
 
-const fields = {
-  address: {type: String, match: patterns.address},
-  defaultString: {type: String, default: ''},
-  defaultNumber: {type: Number, default: 0},
-  defaultBoolean: {type: Boolean, default: false},
-  defaultNatural: {type: Number, default: 0, min: 0},
-  defaultDate: {
-    type: Date, default: function () {
-      return Date.now()
-    }
-  }
-
-}
 module.exports = {
   clone,
   defaultByClass,
   eraseArrays,
-  fields,
   init,
   initMissing,
   initMissingWith,
   initModel,
   initModelField,
-  patterns,
   validate,
   ___validate,
   ___validateModel
