@@ -1,8 +1,8 @@
 {
   "author": "modelair",
   "name": "modelair",
-  "version": "1.0.5",
-  "description": "mongoose schemas front-end utilites",
+  "version": "1.0.6",
+  "description": "schemas front-end utilites",
   "main": "index.js",
 
   "repository": {
