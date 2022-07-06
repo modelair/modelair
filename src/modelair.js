@@ -401,7 +401,7 @@ const validate = (schema, value) => {
   return {error, message}
 }
 
-module.exports = {
+export  {
   clone,
   defaultByClass,
   eraseArrays,

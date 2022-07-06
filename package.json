@@ -1,7 +1,7 @@
 {
   "author": "modelair",
   "name": "modelair",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "mongoose schemas front-end utilites",
   "main": "index.js",
 
@@ -10,7 +10,19 @@
     "url": "https://github.com/modelair/modelair"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js",
+    "build": "webpack --mode=production"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1"
+  }
 }

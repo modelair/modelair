@@ -1,3 +1,3 @@
-module.exports = require('./src/modelair')
-module.exports.fields = require('./src/fields')
-module.exports.patterns = require('./src/patterns')
+module.exports = require('./dist/bundle')
+module.exports.fields = require('./dist/bundle').fields
+module.exports.patterns = require('./dist/bundle').patterns
