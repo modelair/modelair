@@ -1,1 +1,1 @@
-export * from './src/modelair'
+export * from './src/modelair.mjs'

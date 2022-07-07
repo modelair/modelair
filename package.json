@@ -1,7 +1,7 @@
 {
   "author": "modelair",
   "name": "modelair",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "schemas front-end utilites",
   "main": "index.js",
 
@@ -10,7 +10,7 @@
     "url": "https://github.com/modelair/modelair"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node src/modelair.test.mjs",
     "start": "webpack --config webpack.config.js",
     "build": "webpack --mode=production"
   },

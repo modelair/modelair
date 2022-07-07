@@ -143,6 +143,9 @@ const initModelField = field => {
       if (field['type'] === __Buffer) {
         return []
       }
+      if (field['type'] === Function) {
+        return field.default
+      }
       if (field['default']) {
         if (typeof field.default === 'function') {
           return field.default()
