@@ -10,6 +10,8 @@ const model1 = {
 }
 const model2 = {
     numberDefaults: {type: Number, default: 110},
+    numberDefaults2: {sometrash: 1, sometrash2: 110},
+    numberType: Number,
     numberNoDefaults: {type: Number},
     stringDefaults: {type: String, default: 'hello world'},
     stringNoDefaults: {type: String},
@@ -18,7 +20,7 @@ const model2 = {
     dateDefaults: {type: Date, default: new Date()},
     some1: {type: Number, default: 0},
     three: [],
-    number: Number,
+
     array: [
         [],{},[],2
     ],

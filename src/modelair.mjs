@@ -114,7 +114,7 @@ const init = scheme => {
   return initModel(obj)
 }
 const initModelField = field => {
-  if (typeof field === 'function') return field()
+  if (typeof field === 'function') return field
   if (field === ObjectID) {
     return field
   }
@@ -127,43 +127,55 @@ const initModelField = field => {
 
   if (typeof field === 'object') {
     if (field instanceof Array) {
-      if(field.length === 0) return []
-      if (field[0] === ObjectID) {
-        return [ObjectID]
-      }
-      if (typeof field[0] === 'object') {
-
-        return [initModelField(field[0])]
-      }
-      if (typeof field[0] === 'function') {
-        return [field[0]()]
-      }
+      return field
+      // if(field.length === 0) return []
+      // if (field[0] === ObjectID) {
+      //   return [ObjectID]
+      // }
+      // if (typeof field[0] === 'object') {
+      //
+      //   return [initModelField(field[0])]
+      // }
+      // if (typeof field[0] === 'function') {
+      //   return [field[0]()]
+      // }
     }
     if (field['type']) {
       if (field['type'] === __Buffer) {
         return []
       }
       if (field['type'] === Function) {
-        return field.default
+        return field['default'] ? field.default : undefined
       }
-      if (field['default']) {
-        if (typeof field.default === 'function') {
-          return field.default()
+      if (typeof field['type'] === 'function') {
+        if (field['default']) {
+          return field['type'](field['default']) // {type: String, default: 'hello'} -> String('hello')
         } else {
-          return field['type'](field.default)
-        }
-      } else {
-        if (field['type'] === __Buffer) {
-          return []
-        }
-        if (typeof field['type'] === 'function') {
-          return field.type()
-        } else {
-          return field
+
+          return undefined
         }
       }
+      // if (field['default']) {
+      //   if (typeof field.default === 'function') {
+      //     return undefined
+      //   } else {
+      //     return field['type'](field.default)
+      //   }
+      // } else {
+      //   if (field['type'] === __Buffer) {
+      //     return []
+      //   }
+      //   if (typeof field['type'] === 'function') {
+      //     return field.type()
+      //   } else {
+      //     return field
+      //   }
+      // }
+    }
+    else if (field['default']) {
+      return field['default']
     } else {
-      return init(field)
+      return field
     }
   }
   return field
