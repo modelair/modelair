@@ -82,7 +82,7 @@ const clone = function (model) {
           for (_f in defaultFields) {
             if (_f in model[i]) {
               out[i] = model[i]
-              continue
+              // continue
             }
           }
           if (isPrimitive(_f)) {
@@ -127,10 +127,12 @@ const initModelField = field => {
 
   if (typeof field === 'object') {
     if (field instanceof Array) {
+      if(field.length === 0) return []
       if (field[0] === ObjectID) {
         return [ObjectID]
       }
       if (typeof field[0] === 'object') {
+
         return [initModelField(field[0])]
       }
       if (typeof field[0] === 'function') {
@@ -168,16 +170,24 @@ const initModel = scheme => {
   for (let field in scheme) {
     let type = typeof scheme[field]
     let initField = initModelField(scheme[field])
+    console.log('typeof field[0] === \'object\'', initField)
     if (type === 'object') {
       if (typeof initField === 'object') {
-        out[field] = Object.keys(initField).length ? initModel(scheme[field]) : init(scheme[field])
+        if(initField instanceof Array) {
+          out[field] = initField
+        } else  {
+          out[field] = Object.keys(initField).length ? initModel(scheme[field]) : init(scheme[field])
+
+        }
       } else {
         out[field] = initField
       }
     } else {
       out[field] = initField
     }
+
   }
+
   return out
 }
 // add to object every undefined model properties
@@ -244,7 +254,7 @@ const initMissingWith = (scheme, target, skipDefaults) => {
 // }
 /* removes all $-signed fields */
 
-const ___validate = (value, model, deep) => {
+const ___validate = (value, model) => {
   if (value === '' && 'required' in model) {
     return false
   }
