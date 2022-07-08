@@ -20,6 +20,7 @@ const model2 = {
     dateDefaults: {type: Date, default: new Date()},
     some1: {type: Number, default: 0},
     three: [],
+    three2: [],
 
     array: [
         [],{},[],2
