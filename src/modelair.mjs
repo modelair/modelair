@@ -114,7 +114,7 @@ const init = scheme => {
   return initModel(obj)
 }
 const initModelField = field => {
-  if (typeof field === 'function') return field
+  if (typeof field === 'function') return undefined
   if (field === ObjectID) {
     return field
   }
@@ -145,10 +145,10 @@ const initModelField = field => {
         return []
       }
       if (field['type'] === Function) {
-        return field['default'] ? field.default : undefined
+        return 'default' in field ? field.default:  undefined
       }
       if (typeof field['type'] === 'function') {
-        if (field['default']) {
+        if ('default' in field) {
           return field['type'](field['default']) // {type: String, default: 'hello'} -> String('hello')
         } else {
 
@@ -172,7 +172,7 @@ const initModelField = field => {
       //   }
       // }
     }
-    else if (field['default']) {
+    else if ('default' in field) {
       return field['default']
     } else {
       return field
@@ -184,15 +184,15 @@ const initModel = scheme => {
   let out = {}
   for (let field in scheme) {
     let type = typeof scheme[field]
+
     let initField = initModelField(scheme[field])
-    // console.log('typeof field[0] === \'object\'', initField)
+
     if (type === 'object') {
       if (typeof initField === 'object') {
         if(initField instanceof Array) {
           out[field] = initField
         } else  {
           out[field] = Object.keys(initField).length ? initModel(scheme[field]) : init(scheme[field])
-
         }
       } else {
         out[field] = initField

@@ -10,15 +10,22 @@ const model1 = {
 }
 const model2 = {
     numberDefaults: {type: Number, default: 110},
-    numberDefaults2: {sometrash: 1, sometrash2: 110},
     numberType: Number,
     numberNoDefaults: {type: Number},
     stringDefaults: {type: String, default: 'hello world'},
     stringNoDefaults: {type: String},
     booleanDefaults: {type: Boolean, default: true},
+    booleanNoDefaults: {type: Boolean},
+
+    sometrash: {sometrash: 1, sometrash2: 110},
+
     functionDefaults: {type: Function, default: x => console.log(x) },
     dateDefaults: {type: Date, default: new Date()},
-    some1: {type: Number, default: 0},
+    inline: {
+        hello: {type: Number, default: 0},
+        hello2: {type: String, default: ''},
+        hello3:{type: String, default: 'hello world'},
+    },
     three: [],
     three2: [],
 
