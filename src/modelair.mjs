@@ -147,6 +147,9 @@ const initModelField = field => {
       if (field['type'] === Function) {
         return 'default' in field ? field.default:  undefined
       }
+      if (field['type'] === Array) {
+        return 'default' in field ? field.default : undefined
+      }
       if (typeof field['type'] === 'function') {
         if ('default' in field) {
           return field['type'](field['default']) // {type: String, default: 'hello'} -> String('hello')
@@ -171,8 +174,7 @@ const initModelField = field => {
       //     return field
       //   }
       // }
-    }
-    else if ('default' in field) {
+    } else if ('default' in field) {
       return field['default']
     } else {
       return field
