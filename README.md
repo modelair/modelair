@@ -22,8 +22,9 @@ const model =  {
     },
     three: []
 }
-/*
+
 initModel(model) // => 
+/*
 {
     numberDefaults: 110,
     numberType: undefined,
