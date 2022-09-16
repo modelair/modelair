@@ -20,7 +20,16 @@ const model =  {
         hello2: {type: String, default: ''},
         hello3:{type: String, default: 'hello world'},
     },
-    three: []
+    three: [],
+    array: [
+        [],{},[],2
+    ],
+    arrayWith: [{type: String, default: ''}],
+    object: {
+        one: 1,
+        tow: [{type: Boolean}],
+        another: {type: String, default: 'defaulttto'}
+    }
 }
 
 initModel(model) // => 
@@ -36,9 +45,9 @@ initModel(model) // =>
     sometrash: { sometrash: 1, sometrash2: 110 },
     functionDefaults: [Function: default],
     dateDefaults: 'Fri Sep 16 2022 16:43:37 GMT+1200 (Petropavlovsk-Kamchatski Standard Time)',
-        inline: { hello: 0, hello2: '', hello3: 'hello world' },
+    inline: { hello: 0, hello2: '', hello3: 'hello world' },
     three: [],
-        three2: [],
+    three2: [],
     array: [ [], {}, [], 2 ],
     arrayWith: [ { type: [Function: String], default: '' } ],
     object: { one: 1, tow: [ [Object] ], another: 'defaulttto' }
