@@ -81,7 +81,7 @@ export const model4 =  {
     description: {type: String},
     kind: {type: String}, //hotel, hostel, restbase,
     photos: {type: Array},
-    timetable: {type: Array},
+    timetable: {type: Number, default: 110},
     since: {type: Date},
     s: 2,
     price: [{title: String, value: Number, currency: Number}]
@@ -91,7 +91,7 @@ const test2 = testInitModel(model2)
 const test3 = testInitModel(model3)
 const test4 = init(model3)
 const test5 = clone(model1)
-const test6 = testInitModel(model4)
+const test6 = testInitModel(model2)
 // console.log(test.functionDefaults('ok'))
 // console.log(test1)
 // console.log(test2)
