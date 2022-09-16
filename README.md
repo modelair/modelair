@@ -6,25 +6,31 @@ const model =  {
     numberDefaults: {type: Number, default: 110},
     numberType: Number,
     numberNoDefaults: {type: Number},
+    
     stringDefaults: {type: String, default: 'hello world'},
     stringNoDefaults: {type: String},
+    
     booleanDefaults: {type: Boolean, default: true},
     booleanNoDefaults: {type: Boolean},
-
+    
     sometrash: {sometrash: 1, sometrash2: 110},
-
+    
     functionDefaults: {type: Function, default: x => console.log(x) },
+    
     dateDefaults: {type: Date, default: new Date()},
+    
     inline: {
         hello: {type: Number, default: 0},
         hello2: {type: String, default: ''},
         hello3:{type: String, default: 'hello world'},
     },
+    
     three: [],
     array: [
         [],{},[],2
     ],
     arrayWith: [{type: String, default: ''}],
+    
     object: {
         one: 1,
         tow: [{type: Boolean}],
