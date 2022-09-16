@@ -1,8 +1,7 @@
-import { init, initModel } from './modelair.mjs'
+import { init, initModel, clone } from './modelair.mjs'
 
 function testInitModel (model) {
     return initModel(model)
-
 }
 
 const model1 = {
@@ -77,12 +76,29 @@ const model2 = {
         another: {type: String, default: 'defaulttto'}
     }
 }
+export const model4 =  {
+    title: {type: String, maxlength: 64, required: true},
+    description: {type: String},
+    kind: {type: String}, //hotel, hostel, restbase,
+    photos: {type: Array},
+    timetable: {type: Array},
+    since: {type: Date},
+    s: 2,
+    price: [{title: String, value: Number, currency: Number}]
+}
 const test1 = testInitModel(model1)
 const test2 = testInitModel(model2)
 const test3 = testInitModel(model3)
 const test4 = init(model3)
+const test5 = clone(model1)
+const test6 = testInitModel(model4)
 // console.log(test.functionDefaults('ok'))
-console.log(test1)
-console.log(test2)
-console.log(test3)
-console.log(test4)
+// console.log(test1)
+// console.log(test2)
+// console.log(test3)
+// console.log(test4)
+
+test5.capacity = 123
+console.log(model4)
+console.log(test6)
+
