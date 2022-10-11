@@ -188,7 +188,7 @@ const initModel = scheme => {
     let type = typeof scheme[field]
 
     let initField = initModelField(scheme[field])
-    console.log('Field', initField)
+
     if (type === 'object') {
       if (typeof initField === 'object') {
         if(initField instanceof Array) {
