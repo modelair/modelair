@@ -127,7 +127,7 @@ const initModelField = field => {
 
   if (typeof field === 'object') {
     if (field instanceof Array) {
-      return field
+      return field.length ? [initModel(field[0])] : field
       // if(field.length === 0) return []
       // if (field[0] === ObjectID) {
       //   return [ObjectID]
@@ -188,7 +188,7 @@ const initModel = scheme => {
     let type = typeof scheme[field]
 
     let initField = initModelField(scheme[field])
-
+    console.log('Field', initField)
     if (type === 'object') {
       if (typeof initField === 'object') {
         if(initField instanceof Array) {

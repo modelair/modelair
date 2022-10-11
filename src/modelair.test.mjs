@@ -86,19 +86,26 @@ export const model4 =  {
     s: 2,
     price: [{title: String, value: Number, currency: Number}]
 }
-const test1 = testInitModel(model1)
-const test2 = testInitModel(model2)
+export const model5=  {
+    price: [{
+        currency: {type: Number, default: 0},
+        from: {type: Number, default: 0},
+        to: {type: Number, default: 0},
+    }],
+}
+// const test1 = testInitModel(model1)
+// const test2 = testInitModel(model2)
 const test3 = testInitModel(model3)
-const test4 = init(model3)
-const test5 = clone(model1)
-const test6 = testInitModel(model2)
+// const test4 = init(model3)
+// const test5 = clone(model1)
+const test6 = testInitModel(model5)
 // console.log(test.functionDefaults('ok'))
 // console.log(test1)
 // console.log(test2)
 // console.log(test3)
 // console.log(test4)
 
-test5.capacity = 123
-console.log(model4)
-console.log(test6)
+
+console.log('test6')
+console.log(test3)
 
