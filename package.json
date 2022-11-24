@@ -1,9 +1,10 @@
 {
   "author": "modelair",
   "name": "modelair",
-  "version": "1.0.15",
+  "version": "1.0.20",
   "description": "schemas front-end utilites",
-  "main": "index.mjs",
+  "main": "index",
+  "typings": "index",
 
   "repository": {
     "type": "git",

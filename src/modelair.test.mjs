@@ -107,5 +107,5 @@ const test6 = testInitModel(model5)
 
 
 console.log('test6')
-console.log(test3)
+console.log(test6)
 
